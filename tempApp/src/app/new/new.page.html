@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>new</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">new</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-icon name="heart"></ion-icon>
+  <ion-icon name="logo-ionic"></ion-icon>
+
+  <ion-button (click)="scrollToBottom()">Scroll to Bottom</ion-button>
+
+  <!-- Add lots of content to make scrolling possible -->
+  @for (item of item; track $index; let i = $index) {
+  <ion-item>
+    <ion-label>Item {{ i + 1 }}</ion-label>
+  </ion-item>
+  }
+</ion-content>

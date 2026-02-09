@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">tempApp</string>
+    <string name="title_activity_main">tempApp</string>
+    <string name="package_name">com.voortman.insights</string>
+    <string name="custom_url_scheme">com.voortman.insights</string>
+</resources>
