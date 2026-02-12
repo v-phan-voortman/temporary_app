@@ -1,6 +1,37 @@
 @backend_HostAddress = http://localhost:5140
 
-GET {{backend_HostAddress}}/weatherforecast/
-Accept: application/json
+GET {{backend_HostAddress}}/api/books
+
+###
+@id=string
+GET {{backend_HostAddress}}/api/books/{{id}}
+
+###
+POST {{backend_HostAddress}}/api/books
+Content-Type: application/json
+
+{
+  // Book
+}
+
+###
+@id=string
+PUT {{backend_HostAddress}/api/books/{{id}}
+Content-Type: application/json
+{
+  // Book
+}
+
+###
+@id=string
+PATCH {{backend_HostAddress}/api/books/{{id}}
+Content-Type: application/json
+{
+  // Book with only the properties to update
+}
+
+###
+@id=string
+DELETE {{backend_HostAddress}/api/books/{{id}}
 
 ###
