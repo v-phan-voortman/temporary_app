@@ -1,6 +1,8 @@
 
 using backend.Models;
 using backend.Services;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 namespace backend
 {
     public class Program
@@ -8,6 +10,16 @@ namespace backend
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Initialize Firebase Admin SDK 
+            var serviceAccountPath = builder.Configuration["Firebase:ServiceAccountKeyPath"];
+            var credential = GoogleCredential.FromFile(serviceAccountPath);
+
+            FirebaseApp.Create(new AppOptions()
+            {
+                Credential = credential,
+                ProjectId = builder.Configuration["Firebase:ProjectId"]
+            });
 
             // Add services to the container.
             builder.Services.Configure<BookStoreDatabaseSettings>(
